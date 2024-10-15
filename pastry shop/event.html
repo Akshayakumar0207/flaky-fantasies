@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event - Flaky Fantasies</title>
+    <style>
+        body {
+            background-color: #f2e8dc;
+            font-family: 'Lucida Sans', sans-serif;
+        }
+        header {
+            text-align: center;
+            padding: 30px;
+        }
+        h1 {
+            color: #5b4a3f;
+        }
+        .event-section {
+            margin: 20px auto;
+            width: 80%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        .form-group label {
+            display: inline-block;
+        }
+        .submit-btn {
+            background-color: #5b4a3f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .submit-btn:hover {
+            background-color: chocolate;
+        }
+        .total-display {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+            color: #5b4a3f;
+        }
+        .item-varieties {
+            display: none; /* Hide by default */
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff3e0;
+        }
+        .item-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Book Pastries for Your Event</h1>
+</header>
+
+<div class="event-section">
+    <form id="eventForm">
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="event-details">Event Details:</label>
+            <textarea id="event-details" name="event-details" rows="4" placeholder="Describe your event..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Select Items for Your Event:</label>
+            <input type="checkbox" id="cake" name="item" value="cake" data-price="50" onclick="toggleVarieties('cakeVarieties')"> Cakes ($50 each)
+            <div class="item-varieties" id="cakeVarieties">
+                <h4>Choose Your Cake Varieties:</h4>
+                <input type="checkbox" value="Chocolate Cake" data-price="50"> Chocolate Cake ($50)<br>
+                <input type="checkbox" value="Vanilla Cake" data-price="50"> Vanilla Cake ($50)<br>
+                <input type="checkbox" value="Red Velvet Cake" data-price="50"> Red Velvet Cake ($50)<br>
+                <input type="checkbox" value="Pista chew Cake" data-price="50"> Pista Chew Cake($50)<br>
+                <input type="checkbox" value="Strawberry Cake" data-price="50"> Strawberry Cake ($50)<br>
+                <input type="checkbox" value="Rainbow Cake" data-price="50"> Rainbow Cake ($50)<br>
+                <input type="checkbox" value="Whiteforest Cake" data-price="50"> WhiteForest Cake ($50)<br>
+                <input type="checkbox" value="BlackForest Cake" data-price="50"> BlackForest Cake ($50)<br>
+                <input type="checkbox" value="BlackCurrent Cake" data-price="50">BlackCurrent Cake ($50)<br>
+                <input type="checkbox" value="Oreo Cake" data-price="50"> Oreo Cake($50)<br>
+                <input type="checkbox" value="ButterScoth Cake" data-price="50"> ButterScoth Cake ($50)<br>
+            </div>
+
+            <input type="checkbox" id="cupcake" name="item" value="cupcake" data-price="30" onclick="toggleVarieties('cupcakeVarieties')"> Cupcakes ($30 per dozen)
+            <div class="item-varieties" id="cupcakeVarieties">
+                <h4>Choose Your Cupcake Varieties:</h4>
+                <input type="checkbox" value="Chocolate Cupcake" data-price="30"> Chocolate Cupcake ($30)<br>
+                <input type="checkbox" value="Vanilla Cupcake" data-price="30"> Vanilla Cupcake ($30)<br>
+                <input type="checkbox" value="Strawberry Cupcake" data-price="30"> Strawberry Cupcake ($30)<br>
+            </div>
+
+            <input type="checkbox" id="dessert" name="item" value="dessert" data-price="40" onclick="toggleVarieties('dessertVarieties')"> Desserts ($40 per selection)
+            <div class="item-varieties" id="dessertVarieties">
+                <h4>Choose Your Dessert Varieties:</h4>
+                <input type="checkbox" value="Cheesecake" data-price="40"> Cheesecake ($40)<br>
+                <input type="checkbox" value="Brownies" data-price="40"> Brownies ($40)<br>
+                <input type="checkbox" value="Fruit Tart" data-price="40"> Fruit Tart ($40)<br>
+            </div>
+
+            <input type="checkbox" id="iceCream" name="item" value="iceCream" data-price="25" onclick="toggleVarieties('iceCreamVarieties')"> Ice Cream ($25 per selection)
+            <div class="item-varieties" id="iceCreamVarieties">
+                <h4>Choose Your Ice Cream Varieties:</h4>
+                <input type="checkbox" value="Vanilla Ice Cream" data-price="25"> Vanilla Ice Cream ($25)<br>
+                <input type="checkbox" value="Chocolate Ice Cream" data-price="25"> Chocolate Ice Cream ($25)<br>
+                <input type="checkbox" value="Strawberry Ice Cream" data-price="25"> Strawberry Ice Cream ($25)<br>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Quantity (for each selected item):</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1">
+        </div>
+
+        <button type="button" class="submit-btn" onclick="calculateTotal()">Calculate Total</button>
+
+        <div class="total-display" id="totalAmount">Total: $0</div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</div>
+
+<script>
+    function toggleVarieties(varietyId) {
+        const varietySection = document.getElementById(varietyId);
+        varietySection.style.display = varietySection.style.display === 'none' || varietySection.style.display === '' ? 'block' : 'none';
+    }
+
+    function calculateTotal() {
+        const items = document.querySelectorAll('input[name="item"]:checked');
+        const quantity = parseInt(document.getElementById('quantity').value);
+        let total = 0;
+
+        items.forEach(item => {
+            const price = parseInt(item.getAttribute('data-price'));
+            total += price * quantity;
+
+            // Add the cost of selected varieties
+            const selectedVarieties = document.querySelectorAll(`#${item.value}Varieties input:checked`);
+            selectedVarieties.forEach(variety => {
+                total += parseInt(variety.getAttribute('data-price')) * quantity;
+            });
+        });
+
+        document.getElementById('totalAmount').innerText = "Total: $" + total;
+    }
+
+    document.getElementById('eventForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thank you! Your event booking has been submitted.');
+        // Here you can also add functionality to handle the form submission (e.g., send data to the server)
+        this.reset(); // Resets the form after submission
+        document.getElementById('totalAmount').innerText = "Total: $0"; // Reset total display
+    });
+</script>
+
+</body>
+</html>

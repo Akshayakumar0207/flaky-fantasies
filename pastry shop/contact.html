@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contact Us </title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #5D4100;
+    background-color: #C4E8BF;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+header {
+    background: #5b4a3f;
+    color: #fff;
+    padding: 20px 0 ;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #FCFAEE;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 1.1em;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background: #555;
+    border-radius: 4px;
+}
+
+/* Contact Section Styling */
+.contact {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #F1F1F1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    opacity: 0; /* Initial state for animation */
+    animation: fadeIn 1s ease forwards; /* Animation applied */
+}
+
+.contact-section:nth-child(2) {
+    animation-delay: 0.5s; /* Delay for the second section */
+}
+
+.contact-section:nth-child(3) {
+    animation-delay: 1s; /* Delay for the third section */
+}
+
+.contact-section h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #5D4100;
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    color: #5D4100;
+}
+
+.contact-section a {
+    color: #5D4100;
+    text-decoration: underline;
+}
+
+.map-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Social Media Links */
+.social-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+
+.social-links li a {
+    text-decoration: none;
+    color: #5D4100;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: #C4E8BF;
+}
+
+/* Footer Styling */
+footer {
+    background: #C4E8BF;
+    color: #5D4100;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Flaky Fantasies</h1>
+            <nav>
+                <ul>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="shop.html">E-Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Se ction -->
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Reach out to us through the contact information provided below.</p>
+
+            <!-- Address Section -->
+            <div class="contact-section">
+                <h3>Address and Location</h3>
+                <p>57 Raja Street </p>
+                <p>Salem, India</p>
+                <p>ZIP Code: 636010</p>
+                <div class="map-container">
+                    <!-- Embed a map (e.g., Google Maps iframe) -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509639!2d144.95592831532085!3d-37.81720997975181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727db3ba04fb0!2sFlinders%20St%20Station!5e0!3m2!1sen!2sus!4v1622123456789!5m2!1sen!2sus"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- Contact Details Section -->
+            <div class="contact-section">
+                <h3>Contact Details</h3>
+                <p>Email: <a href="mailto:flakyfantasies@gmail.com">contact@gmail.com</a></p>
+                <p>Phone: +91 8870160044</p>
+                <p>Shop Hours: Monday - Sunday 10:00 AM - 10:00 PM</p>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="contact-section">
+                <h3>Follow Us on Social Media</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>Contact: flakyfantasies@gmail.com</p>
+            <p>Address: 57 Raja St., Salem, India</p>
+        </div>
+    </footer>
+</body>
+</html>

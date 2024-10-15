@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flaky Fantasies - Shop</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f2e8dc;
+            font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+        }
+        header {
+            padding: 40px;
+            text-align: center;
+            font-size: 30px;
+            font-style: oblique;
+        }
+        header h1 {
+            margin: 0;
+            color: #5b4a3f;
+            text-transform: capitalize;
+        }
+        nav {
+            background-color: #5b4a3f;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        nav a:hover {
+            background-color: chocolate;
+            border: #555;
+        }
+        .shop-section {
+            padding: 40px;
+            text-align: center;
+        }
+        .items-container {
+            margin-top: 20px;
+        }
+        .item {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #5b4a3f;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .item img {
+            max-width: 200px;
+            height: auto;
+        }
+        .item h3 {
+            margin: 10px 0;
+            color: #5b4a3f;
+        }
+        .item p {
+            margin: 5px 0;
+            color: #333;
+        }
+        .order-btn {
+            padding: 10px 20px;
+            background-color: #5b4a3f;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .order-btn:hover {
+            background-color: chocolate;
+        }
+        .order-form {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+            padding: 20px;
+            border: 2px solid #5b4a3f;
+            background-color: #fff;
+            width: 50%;
+            margin: auto;
+        }
+        .order-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .order-form input {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #5b4a3f;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: chocolate;
+        }
+        .confirmation-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shop - Flaky Fantasies</h1>
+    </header>
+
+    <nav>
+        <a href="menu.html">Menu</a>
+        <a href="shop.html">Shop</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="shop-section">
+        <h2>Select Your Items</h2>
+
+        <!-- Cake Varieties -->
+        <div id="cake-items" class="items-container">
+            <h2>Cake Varieties</h2>
+            <div class="item">
+                <img src="vanila.jpg" alt="Vanilla Cake">
+                <h3>Vanilla Cake</h3>
+                <p>Price: $20 (1kg)</p>
+                <button class="order-btn" onclick="orderItem('Vanilla Cake', '$20', '1kg')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="chocolate.jpg" alt="Chocolate Cake">
+                <h3>Chocolate Cake</h3>
+                <p>Price: $25 (1kg)</p>
+                <button class="order-btn" onclick="orderItem('Chocolate Cake', '$25', '1kg')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="strawberry.jpg" alt="strawberry Cake">
+                <h3>Strawberry Cake</h3>
+                <p>Price: $20 (1kg)</p>
+                <button class="order-btn" onclick="orderItem('strawberry Cake', '$20', '1kg')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="pista chew.jpg" alt="pista chew Cake">
+                <h3>Pista Chew Cake</h3>
+                <p>Price: $25 (1kg)</p>
+                <button class="order-btn" onclick="orderItem('pista chew Cake', '$25', '1kg')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="rainbow.jpg" alt="rainbow Cake">
+                <h3>Rainbow Cake</h3>
+                <p>Price: $20 (1kg)</p>
+                <button class="order-btn" onclick="orderItem('rainbow Cake', '$20', '1kg')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="whiteforest.jpg" alt="whiteforest Cake">
+                <h3>WhiteForest Cake</h3>
+                <p>Price: $25 (1kg)</p>
+                <button class="order-btn" onclick="orderItem('whiteforest Cake', '$25', '1kg')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="blackforest.jpg" alt="blackforest Cake">
+                <h3>BlackForest Cake</h3>
+                <p>Price: $20 (1kg)</p>
+                <button class="order-btn" onclick="orderItem('blackforest Cake', '$20', '1kg')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="blackcurrent.jpg" alt="blackcurrent Cake">
+                <h3>BlackCurrent Cake</h3>
+                <p>Price: $25 (1kg)</p>
+                <button class="order-btn" onclick="orderItem('blackcurrent Cake', '$25', '1kg')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="oreo.jpg" alt="oreo Cake">
+                <h3>Oreo Cake</h3>
+                <p>Price: $25 (1kg)</p>
+                <button class="order-btn" onclick="orderItem('oreo Cake', '$25', '1kg')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="butterscoth.jpg" alt="butterscoth Cake">
+                <h3>ButterScoth Cake</h3>
+                <p>Price: $20 (1kg)</p>
+                <button class="order-btn" onclick="orderItem('butterscoth Cake', '$20', '1kg')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="redvelvet.jpg" alt="redvelvet Cake">
+                <h3>RedVelvet Cake</h3>
+                <p>Price: $25 (1kg)</p>
+                <button class="order-btn" onclick="orderItem('redvelvet Cake', '$25', '1kg')">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Cupcake Varieties -->
+        <div id="cupcake-items" class="items-container">
+            <h2>Cupcake Varieties</h2>
+            <div class="item">
+                <img src="bubblegum.jpeg" alt="Bubblegum Cupcake">
+                <h3>Bubblegum Cupcake</h3>
+                <p>Price: $3 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('Bubblegum Cupcake', '$3', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="orangecreamsicle.jpeg" alt="orangecreamsicle Cupcake">
+                <h3>Orange Cream Sicle Cupcake</h3>
+                <p>Price: $3 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('orangecreamsicle Cupcake', '$3', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="raspberry swirl.jpg" alt="raspberry swirl Cupcake">
+                <h3>Raspberry Swirl Cupcake</h3>
+                <p>Price: $3 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('raspberry swirl', '$3', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="cottoncandy.jpeg" alt="cottoncandy Cupcake">
+                <h3>Cottoncandy Cupcake</h3>
+                <p>Price: $3 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('cottoncandy', '$3', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="sprinklerainbow.jpeg" alt="sprinklerainbow Cupcake">
+                <h3>Sprinkele Rainbow Cupcake</h3>
+                <p>Price: $3 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('sprinklerainbow Cupcake', '$3', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="cinnamonsugar.jpeg" alt="cinnamonsugar Cupcake">
+                <h3>Cinnamonsugar Cupcake</h3>
+                <p>Price: $3 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('cinnamonsugar Cupcake', '$3', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="chocolate chip cookie dough.jpeg" alt="chocolate chip cookie dough Cupcake">
+                <h3>Chocolate Chip Cookie Dough Cupcake</h3>
+                <p>Price: $3 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('chocolate chip cookie dough Cupcake', '$3', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="lemon blueberry.jpeg" alt="lemon blueberry Cupcake">
+                <h3>Lemon Blueberry Cupcake</h3>
+                <p>Price: $3 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('lemon blueberry Cupcake', '$3', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="lemon lavender.jpeg" alt="lemon lavender Cupcake">
+                <h3>Lemon Lavender Cupcake</h3>
+                <p>Price: $3 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('lemon lavender Cupcake', '$3', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="customizied cupcakes.jpeg" alt="customizied cupcakes Cupcake">
+                <h3>Customizied Cupcakes</h3>
+                <p>Price: $3 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('customizied cupcakes Cupcake', '$3', 'per piece')">Order Now</button>
+            </div>
+
+            <!-- Add more cupcakes similarly -->
+        </div>
+
+        <!-- Ice Cream Varieties -->
+        <div id="icecream-items" class="items-container">
+            <h2>Ice Cream Varieties</h2>
+            <div class="item">
+                <img src="s'mores galore.jpeg" alt="S'Mores Galore Ice Cream">
+                <h3>S'Mores Galore Ice Cream</h3>
+                <p>Price: $8 (500ml)</p>
+                <button class="order-btn" onclick="orderItem('S\'Mores Galore Ice Cream', '$8', '500ml')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="rocky road.jpeg" alt="rocky road Ice Cream">
+                <h3>Rocky Road Ice Cream</h3>
+                 <p>Price: $8 (500ml)</p>
+                 <button class="order-btn" onclick="orderItem('rocky road Ice Cream', '$8', '500ml')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="cookie and cream.jpeg" alt="cookie and cream Ice Cream">
+                <h3>Cookie And Cream Ice Cream</h3>
+                <p>Price: $8 (500ml)</p>
+                <button class="order-btn" onclick="orderItem('cookie and cream Ice Cream', '$8', '500ml')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="blueberry cobbler.jpeg" alt="blueberry cobbler Ice Cream">
+                <h3>Blueberry Cobbler Ice Cream</h3>
+                <p>Price: $8 (500ml)</p>
+                <button class="order-btn" onclick="orderItem('blueberry cobbler Ice Cream', '$8', '500ml')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="hazelnut gelato.jpeg" alt="hazelnut gelato Ice Cream">
+                <h3>Hazlenut Gelato Ice Cream</h3>
+                <p>Price: $8 (500ml)</p>
+                <button class="order-btn" onclick="orderItem('hazelnut gelato Ice Cream', '$8', '500ml')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="coconut lime.jpeg" alt="coconut lime Ice Cream">
+                <h3>Coconut Lime Ice Cream</h3>
+                <p>Price: $8 (500ml)</p>
+                <button class="order-btn" onclick="orderItem('coconut lime Ice Cream', '$8', '500ml')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="lemon lavender.jpeg" alt="lemon lavender Ice Cream">
+                <h3>Lemon Lavender Ice Cream</h3>
+                <p>Price: $8 (500ml)</p>
+                <button class="order-btn" onclick="orderItem('lemon lavender Ice Cream', '$8', '500ml')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="mango sorbet.jpeg" alt="mango sorbet Ice Cream">
+                <h3>Mango Soebet Ice Cream</h3>
+                <p>Price: $8 (500ml)</p>
+                <button class="order-btn" onclick="orderItem('mango sorbet Ice Cream', '$8', '500ml')">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Dessert Varieties -->
+        <div id="dessert-items" class="items-container">
+            <h2>Dessert Varieties</h2>
+            <div class="item">
+                <img src="cheesecake.jpeg" alt="Cheesecake">
+                <h3>Cheesecake</h3>
+                <p>Price: $15 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('Cheesecake', '$15', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="brownies.jpeg" alt="brownies">
+                <h3>Brownies</h3>
+                <p>Price: $15 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('brownies', '$15', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="pie.jpeg" alt="pie">
+                <h3>pie</h3>
+                <p>Price: $15 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('pie', '$15', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="tarts.jpeg" alt="tarts">
+                <h3>Tarts</h3>
+                <p>Price: $15 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('tarts', '$15', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="tiramisu.jpg" alt="Cheesecake">
+                <h3>Tiramisu</h3>
+                <p>Price: $15 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('Cheesecake', '$15', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="mouse.jpg" alt="Cheesecake">
+                <h3>Mouse</h3>
+                <p>Price: $15 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('Cheesecake', '$15', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="mochi.jpeg" alt="Cheesecake">
+                <h3>Mochi</h3>
+                <p>Price: $15 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('Cheesecake', '$15', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="baklava.jpeg" alt="Cheesecake">
+                <h3>Baklava</h3>
+                <p>Price: $15 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('Cheesecake', '$15', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="cinnamonrolls.jpeg" alt="Cheesecake">
+                <h3>Cinnamonrolls</h3>
+                <p>Price: $15 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('Cheesecake', '$15', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="pudding.png" alt="Cheesecake">
+                <h3>Pudding</h3>
+                <p>Price: $15 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('Cheesecake', '$15', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="lemonbar.jpeg" alt="Cheesecake">
+                <h3>Lemonbar</h3>
+                <p>Price: $15 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('Cheesecake', '$15', 'per piece')">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="tresleches.jpeg" alt="Cheesecake">
+                <h3>Tresleches</h3>
+                <p>Price: $15 (per piece)</p>
+                <button class="order-btn" onclick="orderItem('Cheesecake', '$15', 'per piece')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="order-form">
+            <h2>Order Form</h2>
+            <p id="selected-items"></p>
+            <p id="total-price"></p>
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+            <label for="address">Address</label>
+            <input type="text" id="address" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+            <label for="payment-method">Payment Method</label>
+            <select id="payment-method" onchange="displayPaymentOptions()">
+                <option value="cash">Cash on Delivery</option>
+                <option value="online">Online Payment</option>
+            </select>
+
+            <div class="payment-options" style="display: none;">
+                <p>Select Payment Method:</p>
+                <input type="radio" name="payment" id="upi" value="upi"> UPI<br>
+                <input type="radio" name="payment" id="credit-card" value="credit-card"> Credit/Debit Card<br>
+                <input type="radio" name="payment" id="net-banking" value="net-banking"> Net Banking<br>
+                <input type="radio" name="payment" id="wallet" value="wallet"> Mobile Wallet<br>
+            </div>
+
+            <button class="submit-btn" onclick="submitOrder()">Submit</button>
+        </div>
+
+        <div class="confirmation-message"></div>
+
+    <script>
+        let selectedItems = [];
+        let totalPrice = 0;
+
+        function addItem(itemName, price) {
+            selectedItems.push({ name: itemName, price: price });
+            totalPrice += price;
+            updateOrderForm();
+        }
+
+        function updateOrderForm() {
+            const itemList = selectedItems.map(item => `${item.name} - $${item.price}`).join(', ');
+            document.getElementById('selected-items').innerText = `Selected Items: ${itemList}`;
+            document.getElementById('total-price').innerText = `Total Price: $${totalPrice}`;
+            document.querySelector('.order-form').style.display = 'block';
+        }
+
+        function displayPaymentOptions() {
+            const paymentMethod = document.getElementById('payment-method').value;
+            const paymentOptions = document.querySelector('.payment-options');
+            paymentOptions.style.display = paymentMethod === 'online' ? 'block' : 'none';
+        }
+
+        function submitOrder() {
+            // Gather user details
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const email = document.getElementById('email').value;
+
+            if (!name || !phone || !address || !email) {
+                alert("Please fill in all the required fields.");
+                return;
+            }
+
+            // Display confirmation message
+            document.querySelector('.order-form').style.display = 'none';
+            const confirmationMessage = document.querySelector('.confirmation-message');
+            confirmationMessage.innerHTML = `
+                <h2>Thank you, ${name}!</h2>
+                <p>Your order has been successfully placed.</p>
+                <p>We will deliver your order to ${address}.</p>
+                <p>Total Price: $${totalPrice}</p>
+                <p>If you have any questions, contact us at ${email}.</p>
+            `;
+            confirmationMessage.style.display = 'block';
+        }
+
+        function orderItem(itemName, price, size) {
+            addItem(itemName, parseFloat(price.replace('$', '')));
+        }
+    </script>
+</body>
+</html>
